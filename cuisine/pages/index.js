@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({joke}) {
+  console.log(joke)
   return (
     <div >
       <Head>
@@ -12,7 +12,25 @@ export default function Home() {
       </Head>
       
         <h1 className={styles.title}>Cuisine </h1>
+        <span className={styles.description}>
+          
+          <br></br>
+          <h1>{joke.contents.jokes[0].joke.title}</h1>
+          <h3>{joke.contents.jokes[0].joke.text}</h3>
+
+          </span>
       
     </div>
   )
+}
+
+export const getStaticProps = async () => {
+  const res = await fetch('https://api.jokes.one/jod?category=animal')
+  const data = await res.json()
+
+  return {
+    props: {
+      joke: data
+    }
+  }
 }
