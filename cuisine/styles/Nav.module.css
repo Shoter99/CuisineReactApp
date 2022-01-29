@@ -1,0 +1,27 @@
+.nav{
+    height: 50px;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.nav h1{
+    padding-left: 2rem;
+}
+.nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    list-style: none;
+    margin-right: 2rem;
+
+
+}
+.nav ul li{
+    margin-left: 20px;
+    font-size: 20px;
+    margin: 0 2rem;
+}
